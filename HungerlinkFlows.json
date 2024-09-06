@@ -1,0 +1,827 @@
+[
+    {
+        "id": "4ab63e79c32939ab",
+        "type": "tab",
+        "label": "Edit User",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "58c6cfbcefbb1076",
+        "type": "tab",
+        "label": "List User Associations",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "96d4e999e1c8a66b",
+        "type": "tab",
+        "label": "Get User",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7ae5ccd181aa79dd",
+        "type": "tab",
+        "label": "App SignIn",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fafe348367fee9bb",
+        "type": "subflow",
+        "name": "hl_sign_in",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "6976b6880ff0a45c"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 480,
+                "y": 540,
+                "wires": [
+                    {
+                        "id": "be389ca379fa40c7",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#87A980",
+        "icon": "font-awesome/fa-cubes",
+        "status": {
+            "x": 600,
+            "y": 140,
+            "wires": [
+                {
+                    "id": "39a0db820a1ac3fc",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "1ebb4bb5fce21c66",
+        "type": "subflow",
+        "name": "hl_request",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "06fd1e597453eadc"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 840,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "fae7e9b06299897b",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "hl_method",
+                "type": "str",
+                "value": ""
+            },
+            {
+                "name": "hl_params",
+                "type": "json",
+                "value": "{}"
+            },
+            {
+                "name": "noType",
+                "type": "bool",
+                "value": "false"
+            },
+            {
+                "name": "noToken",
+                "type": "bool",
+                "value": "false"
+            }
+        ],
+        "meta": {
+            "module": "Hungerlink Request",
+            "version": "1.0.0",
+            "author": "Desmond",
+            "keywords": "request, hl request, hungerlink request"
+        },
+        "color": "#87A980",
+        "icon": "font-awesome/fa-cube",
+        "status": {
+            "x": 520,
+            "y": 240,
+            "wires": [
+                {
+                    "id": "2d6df988261a47b4",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "3225c3197b523c5f",
+        "type": "subflow",
+        "name": "hl_list_rpc",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "3b1e3dd1fa4a46f0"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 540,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "fd9daf27eb74e7e7",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "assoc_type",
+                "type": "str",
+                "value": "bme+admin",
+                "ui": {
+                    "icon": "font-awesome/fa-list",
+                    "type": "select",
+                    "opts": {
+                        "opts": [
+                            {
+                                "l": {
+                                    "en-US": "volunteer_assoc"
+                                },
+                                "v": "bme+volunteer"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "employee_assoc"
+                                },
+                                "v": "bme+employee"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "bme_admin_assoc"
+                                },
+                                "v": "bme+admin"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "region_admin_assoc"
+                                },
+                                "v": "geoscope_region+admin"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "country_admin_assoc"
+                                },
+                                "v": "geoscope_country+admin"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "continent_admin_assoc"
+                                },
+                                "v": "geoscope_continent+admin"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "hl_params",
+                "type": "json",
+                "value": "{}"
+            }
+        ],
+        "meta": {},
+        "color": "#87A980",
+        "icon": "font-awesome/fa-cubes",
+        "status": {
+            "x": 500,
+            "y": 240,
+            "wires": [
+                {
+                    "id": "55df54f4e60fb6d4",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "9c1874f4c364028e",
+        "type": "group",
+        "z": "7ae5ccd181aa79dd",
+        "name": "App Sign In",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "c5fc250d2858c9c3",
+            "ede0043cadc4eb86",
+            "4ae436e815d4dc9c"
+        ],
+        "x": 94,
+        "y": 119,
+        "w": 632,
+        "h": 82
+    },
+    {
+        "id": "bb7236b8e0ceafa1",
+        "type": "group",
+        "z": "96d4e999e1c8a66b",
+        "name": "cdr:user:get",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "5d3f0d5cfdd17902",
+            "8569bb20a9fbc6ac",
+            "db892a7687fda3b5"
+        ],
+        "x": 34,
+        "y": 59,
+        "w": 632,
+        "h": 82
+    },
+    {
+        "id": "46d7ea7ccf251d1a",
+        "type": "group",
+        "z": "4ab63e79c32939ab",
+        "name": "cdr:user:edit",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3d78142c5ba74614",
+            "b7d86f2278773cf2",
+            "15278bc417a04c14"
+        ],
+        "x": 54,
+        "y": 59,
+        "w": 632,
+        "h": 82
+    },
+    {
+        "id": "846ba16d4f5334de",
+        "type": "group",
+        "z": "58c6cfbcefbb1076",
+        "name": "cdr:bme:association:list",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "e92efc30eecca235",
+            "a501df608a58ab27",
+            "601a09f3d00fa8e5"
+        ],
+        "x": 24,
+        "y": 99,
+        "w": 602,
+        "h": 82
+    },
+    {
+        "id": "7e1d1f51c7c43416",
+        "type": "function",
+        "z": "fafe348367fee9bb",
+        "name": "Store Token",
+        "func": "\nconst reply_token = msg.payload.result.reply_token || \"\";\nconst rechallenge_token = msg.payload.result.rechallenge_token || \"\";\n\nglobal.set(\"RECHALLENGE_TOKEN\", rechallenge_token);\n\nmsg.hl_params = {\n    \"challenge_code\": \"123456\",\n    \"reply_token\": reply_token\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 280,
+        "wires": [
+            [
+                "3ddd9d99db499dc1"
+            ]
+        ]
+    },
+    {
+        "id": "6976b6880ff0a45c",
+        "type": "subflow:1ebb4bb5fce21c66",
+        "z": "fafe348367fee9bb",
+        "name": "",
+        "env": [
+            {
+                "name": "hl_method",
+                "value": "hlapp:sign_in:init",
+                "type": "str"
+            },
+            {
+                "name": "hl_params",
+                "value": "{\"email\":\"bot@h.l\",\"os_platform\":\"android\",\"device_name\":\"Pixel 5\",\"model_version\":\"11.0\",\"device_resolution\":[1080,2400],\"device_category\":\"tablet\",\"app_version\":\"1.2.3\"}",
+                "type": "json"
+            },
+            {
+                "name": "noType",
+                "value": "true",
+                "type": "bool"
+            },
+            {
+                "name": "noToken",
+                "value": "true",
+                "type": "bool"
+            },
+            {
+                "name": "method",
+                "value": "hlapp:sign_in:init",
+                "type": "str"
+            },
+            {
+                "name": "params",
+                "value": "{\"email\":\"bot@h.l\",\"os_platform\":\"android\",\"device_name\":\"Pixel 5\",\"model_version\":\"11.0\",\"device_resolution\":[1080,2400],\"device_category\":\"tablet\",\"app_version\":\"1.2.3\"}",
+                "type": "json"
+            }
+        ],
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "7e1d1f51c7c43416"
+            ]
+        ]
+    },
+    {
+        "id": "3ddd9d99db499dc1",
+        "type": "subflow:1ebb4bb5fce21c66",
+        "z": "fafe348367fee9bb",
+        "name": "",
+        "env": [
+            {
+                "name": "hl_method",
+                "value": "hlapp:sign_in:challenge_reply",
+                "type": "str"
+            },
+            {
+                "name": "noType",
+                "value": "true",
+                "type": "bool"
+            },
+            {
+                "name": "noToken",
+                "value": "true",
+                "type": "bool"
+            },
+            {
+                "name": "params",
+                "value": "{\"challenge_code\":\"123456\",\"reply_token\":\"REPLY_TOKEN\"}",
+                "type": "json"
+            }
+        ],
+        "x": 220,
+        "y": 420,
+        "wires": [
+            [
+                "be389ca379fa40c7"
+            ]
+        ]
+    },
+    {
+        "id": "39a0db820a1ac3fc",
+        "type": "status",
+        "z": "fafe348367fee9bb",
+        "name": "",
+        "scope": null,
+        "x": 420,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "be389ca379fa40c7",
+        "type": "function",
+        "z": "fafe348367fee9bb",
+        "name": "Store Type and Token",
+        "func": "const token = msg.payload.result.token || \"\";\nconst type = msg.payload.result.type || \"\";\n\nglobal.set(\"SESSION_TOKEN\", token);\nglobal.set(\"AUTH_TYPE\", type);\n\n// node.status({fill: \"green\", shape: \"dot\", text: \" success\"});\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f1cb8f2c2c3eac03",
+        "type": "http request",
+        "z": "1ebb4bb5fce21c66",
+        "name": "Send Request",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://localhost:5000/jsonrpc",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 400,
+        "y": 140,
+        "wires": [
+            [
+                "fae7e9b06299897b"
+            ]
+        ]
+    },
+    {
+        "id": "06fd1e597453eadc",
+        "type": "function",
+        "z": "1ebb4bb5fce21c66",
+        "name": "Format RPC",
+        "func": "const AUTH_TYPE = global.get(\"AUTH_TYPE\")\nconst SESSION_TOKEN = global.get(\"SESSION_TOKEN\")\n\nnode.status({fill: \"yellow\", shape: \"ring\", text: \" requesting...\"});\n\nconst noType = env.get(\"noType\")\nconst noToken = env.get(\"noToken\")\n\nmsg.payload = {\n    \"jsonrpc\": \"2.0+hl\",\n    \"id\": 1,\n    \"method\": msg.hl_method || env.get(\"hl_method\"),\n    \"version\": 1,\n    \"params\":  msg.hl_params || env.get(\"hl_params\"),\n    \"auth\": {\n        ...(noType ? {} : {\"type\": AUTH_TYPE}),\n        ...(noToken ? {} : {\"token\": SESSION_TOKEN }),\n    }\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 140,
+        "wires": [
+            [
+                "f1cb8f2c2c3eac03"
+            ]
+        ]
+    },
+    {
+        "id": "fae7e9b06299897b",
+        "type": "function",
+        "z": "1ebb4bb5fce21c66",
+        "name": "Format Status",
+        "func": "\nconst error = msg.payload?.error?.code\nif(error){\n    node.status({fill:\"red\",shape:\"ring\",text:error});\n} else {\n    node.status({fill:\"green\",shape:\"dot\",text:\" success\"});\n}\n\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2d6df988261a47b4",
+        "type": "status",
+        "z": "1ebb4bb5fce21c66",
+        "name": "",
+        "scope": null,
+        "x": 280,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fd9daf27eb74e7e7",
+        "type": "subflow:1ebb4bb5fce21c66",
+        "z": "3225c3197b523c5f",
+        "name": "",
+        "env": [
+            {
+                "name": "method",
+                "value": "hlapp:sign_in:init",
+                "type": "str"
+            },
+            {
+                "name": "params",
+                "value": "{\"email\":\"bot@h.l\",\"os_platform\":\"android\",\"device_name\":\"Pixel 5\",\"model_version\":\"11.0\",\"device_resolution\":[1080,2400],\"device_category\":\"tablet\",\"app_version\":\"1.2.3\"}",
+                "type": "json"
+            }
+        ],
+        "x": 370,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3b1e3dd1fa4a46f0",
+        "type": "function",
+        "z": "3225c3197b523c5f",
+        "name": "format input",
+        "func": "node.status({fill: \"yellow\", shape: \"ring\", text: \" requesting...\"});\n\nconst assoc_type = env.get(\"assoc_type\")\nconst params = env.get(\"hl_params\")\n\nmsg.hl_method = \"cdr:user:association:list\"\nmsg.hl_params = {\n    \"association_type\": assoc_type,\n    \"status\": [\"active\", \"pending\", \"inactive\"],\n    ...params // add other params needed\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 100,
+        "wires": [
+            [
+                "fd9daf27eb74e7e7"
+            ]
+        ]
+    },
+    {
+        "id": "55df54f4e60fb6d4",
+        "type": "status",
+        "z": "3225c3197b523c5f",
+        "name": "",
+        "scope": null,
+        "x": 300,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3d78142c5ba74614",
+        "type": "inject",
+        "z": "4ab63e79c32939ab",
+        "g": "46d7ea7ccf251d1a",
+        "name": "in",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "b7d86f2278773cf2"
+            ]
+        ]
+    },
+    {
+        "id": "b7d86f2278773cf2",
+        "type": "subflow:1ebb4bb5fce21c66",
+        "z": "4ab63e79c32939ab",
+        "g": "46d7ea7ccf251d1a",
+        "name": "",
+        "env": [
+            {
+                "name": "hl_method",
+                "value": "cdr:user:edit",
+                "type": "str"
+            },
+            {
+                "name": "hl_params",
+                "value": "{\"first_name\":\"Node RED\",\"last_name\":\"Oben\"}",
+                "type": "json"
+            },
+            {
+                "name": "method",
+                "value": "cdr:user:get",
+                "type": "str"
+            }
+        ],
+        "x": 360,
+        "y": 100,
+        "wires": [
+            [
+                "15278bc417a04c14"
+            ]
+        ]
+    },
+    {
+        "id": "15278bc417a04c14",
+        "type": "debug",
+        "z": "4ab63e79c32939ab",
+        "g": "46d7ea7ccf251d1a",
+        "name": "Output users",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "e92efc30eecca235",
+        "type": "subflow:3225c3197b523c5f",
+        "z": "58c6cfbcefbb1076",
+        "g": "846ba16d4f5334de",
+        "name": "",
+        "env": [
+            {
+                "name": "assoc_type",
+                "value": "bme+volunteer",
+                "type": "str"
+            },
+            {
+                "name": "type",
+                "value": "employee_assoc",
+                "type": "str"
+            }
+        ],
+        "x": 320,
+        "y": 140,
+        "wires": [
+            [
+                "601a09f3d00fa8e5"
+            ]
+        ]
+    },
+    {
+        "id": "a501df608a58ab27",
+        "type": "inject",
+        "z": "58c6cfbcefbb1076",
+        "g": "846ba16d4f5334de",
+        "name": "inject",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 120,
+        "y": 140,
+        "wires": [
+            [
+                "e92efc30eecca235"
+            ]
+        ]
+    },
+    {
+        "id": "601a09f3d00fa8e5",
+        "type": "debug",
+        "z": "58c6cfbcefbb1076",
+        "g": "846ba16d4f5334de",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.result",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "5d3f0d5cfdd17902",
+        "type": "inject",
+        "z": "96d4e999e1c8a66b",
+        "g": "bb7236b8e0ceafa1",
+        "name": "in",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 100,
+        "wires": [
+            [
+                "8569bb20a9fbc6ac"
+            ]
+        ]
+    },
+    {
+        "id": "8569bb20a9fbc6ac",
+        "type": "subflow:1ebb4bb5fce21c66",
+        "z": "96d4e999e1c8a66b",
+        "g": "bb7236b8e0ceafa1",
+        "name": "",
+        "env": [
+            {
+                "name": "hl_method",
+                "value": "cdr:user:get",
+                "type": "str"
+            },
+            {
+                "name": "method",
+                "value": "cdr:user:get",
+                "type": "str"
+            }
+        ],
+        "x": 340,
+        "y": 100,
+        "wires": [
+            [
+                "db892a7687fda3b5"
+            ]
+        ]
+    },
+    {
+        "id": "db892a7687fda3b5",
+        "type": "debug",
+        "z": "96d4e999e1c8a66b",
+        "g": "bb7236b8e0ceafa1",
+        "name": "Output users",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "c5fc250d2858c9c3",
+        "type": "subflow:fafe348367fee9bb",
+        "z": "7ae5ccd181aa79dd",
+        "g": "9c1874f4c364028e",
+        "name": "",
+        "x": 400,
+        "y": 160,
+        "wires": [
+            [
+                "4ae436e815d4dc9c"
+            ]
+        ]
+    },
+    {
+        "id": "ede0043cadc4eb86",
+        "type": "inject",
+        "z": "7ae5ccd181aa79dd",
+        "g": "9c1874f4c364028e",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 160,
+        "wires": [
+            [
+                "c5fc250d2858c9c3"
+            ]
+        ]
+    },
+    {
+        "id": "4ae436e815d4dc9c",
+        "type": "debug",
+        "z": "7ae5ccd181aa79dd",
+        "g": "9c1874f4c364028e",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 160,
+        "wires": []
+    }
+]

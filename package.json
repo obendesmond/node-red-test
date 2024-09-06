@@ -1,0 +1,12 @@
+{
+    "name": "Hungerlink",
+    "description": "hungerlink project for testing",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "HungerlinkFlows.json",
+            "credentialsFile": "HungerlinkFlows_cred.json"
+        }
+    }
+}
