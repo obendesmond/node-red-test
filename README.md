@@ -1,7 +1,7 @@
 Hungerlink
 ==========
 
-hungerlink project for testing
+hungerlink project for testing rpcs
 
 ### About
 
