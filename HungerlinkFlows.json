@@ -312,9 +312,9 @@
             "601a09f3d00fa8e5"
         ],
         "x": 24,
-        "y": 79,
+        "y": 99,
         "w": 602,
-        "h": 102
+        "h": 82
     },
     {
         "id": "3f07b74f8fa43ceb",
@@ -757,18 +757,13 @@
         "name": "",
         "env": [
             {
-                "name": "assoc_type",
-                "value": "bme+volunteer",
-                "type": "str"
-            },
-            {
                 "name": "type",
                 "value": "employee_assoc",
                 "type": "str"
             }
         ],
         "x": 320,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
                 "601a09f3d00fa8e5"
