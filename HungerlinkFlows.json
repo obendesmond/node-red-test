@@ -317,6 +317,42 @@
         "h": 82
     },
     {
+        "id": "3f07b74f8fa43ceb",
+        "type": "group",
+        "z": "4ab63e79c32939ab",
+        "name": "cdr:user:edit",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "1591c14b8fda7ef1",
+            "b05245d12cf395a2",
+            "77d04d3bbade34c1"
+        ],
+        "x": 54,
+        "y": 199,
+        "w": 632,
+        "h": 82
+    },
+    {
+        "id": "ac6fbebfc9783d4f",
+        "type": "group",
+        "z": "58c6cfbcefbb1076",
+        "name": "cdr:bme:association:list",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "8145f3a52752183f",
+            "340e02c5c024e4f6",
+            "8edefa3525b9f089"
+        ],
+        "x": 24,
+        "y": 219,
+        "w": 602,
+        "h": 82
+    },
+    {
         "id": "7e1d1f51c7c43416",
         "type": "function",
         "z": "fafe348367fee9bb",
@@ -645,6 +681,75 @@
         "wires": []
     },
     {
+        "id": "1591c14b8fda7ef1",
+        "type": "inject",
+        "z": "4ab63e79c32939ab",
+        "g": "3f07b74f8fa43ceb",
+        "name": "in",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 240,
+        "wires": [
+            [
+                "b05245d12cf395a2"
+            ]
+        ]
+    },
+    {
+        "id": "b05245d12cf395a2",
+        "type": "subflow:1ebb4bb5fce21c66",
+        "z": "4ab63e79c32939ab",
+        "g": "3f07b74f8fa43ceb",
+        "name": "",
+        "env": [
+            {
+                "name": "hl_method",
+                "value": "cdr:user:edit",
+                "type": "str"
+            },
+            {
+                "name": "hl_params",
+                "value": "{\"first_name\":\"Node RED\",\"last_name\":\"Oben\"}",
+                "type": "json"
+            },
+            {
+                "name": "method",
+                "value": "cdr:user:get",
+                "type": "str"
+            }
+        ],
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "77d04d3bbade34c1"
+            ]
+        ]
+    },
+    {
+        "id": "77d04d3bbade34c1",
+        "type": "debug",
+        "z": "4ab63e79c32939ab",
+        "g": "3f07b74f8fa43ceb",
+        "name": "Output users",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 240,
+        "wires": []
+    },
+    {
         "id": "e92efc30eecca235",
         "type": "subflow:3225c3197b523c5f",
         "z": "58c6cfbcefbb1076",
@@ -706,6 +811,70 @@
         "statusType": "auto",
         "x": 520,
         "y": 140,
+        "wires": []
+    },
+    {
+        "id": "8145f3a52752183f",
+        "type": "subflow:3225c3197b523c5f",
+        "z": "58c6cfbcefbb1076",
+        "g": "ac6fbebfc9783d4f",
+        "name": "",
+        "env": [
+            {
+                "name": "assoc_type",
+                "value": "bme+volunteer",
+                "type": "str"
+            },
+            {
+                "name": "type",
+                "value": "employee_assoc",
+                "type": "str"
+            }
+        ],
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "8edefa3525b9f089"
+            ]
+        ]
+    },
+    {
+        "id": "340e02c5c024e4f6",
+        "type": "inject",
+        "z": "58c6cfbcefbb1076",
+        "g": "ac6fbebfc9783d4f",
+        "name": "inject",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 120,
+        "y": 260,
+        "wires": [
+            [
+                "8145f3a52752183f"
+            ]
+        ]
+    },
+    {
+        "id": "8edefa3525b9f089",
+        "type": "debug",
+        "z": "58c6cfbcefbb1076",
+        "g": "ac6fbebfc9783d4f",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.result",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 260,
         "wires": []
     },
     {
